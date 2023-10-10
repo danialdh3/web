@@ -6,18 +6,32 @@
         // let obj = {};
         // obj.name = name;
         // alert(obj.name);
-        let p = prompt("Enter number:")
+        // let p = prompt("Enter number:")
         // for (i = 1; i <= p; i++) {
         //     alert("number:" + i);
 
         // }
-        let j = 1;
-        while (j <= p) {
+        // let j = 1;
+        // while (j <= p) {
 
-            alert("Number : " + j)
-            j++;
+        //     alert("Number : " + j)
+        //     j++;
+        // }
+
+        let user = prompt("Enter number user:")
+        let sh = 1;
+        let obj = {};
+        while (sh <= user) {
+            obj.student = {}
+            obj.student.name = prompt("Enter name:");
+            obj.student.famly = prompt("Enter famly:");
+            obj.student.age = prompt("Enter age:");
+            alert("name:" + obj.student.name + "famly:" + obj.student.name + "age:" + obj.student.name);
+            sh++;
+
         }
 
+        console.log(obj);
     </script>
 </body>
 
