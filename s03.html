@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html dir="rtl" >
+<html dir="rtl">
+
 <head>
-    
+
     <title>danial hashimnea</title>
 
 </head>
+
 <body>
 
     <style>
@@ -12,11 +14,13 @@
             font-size: 30px;
             background-color: yellow;
             display: inline-block;
-            
+
         }
-#text_content{
-    border: 2px solid green;
-}
+
+        #text_content {
+            border: 2px solid green;
+            width: 285px;
+        }
     </style>
 
     <p id="text_content">.دانیال هاشم نیا هستم از مشهد و 20 سال دارم</p>
@@ -27,12 +31,50 @@
         <li>موبایل </li>
     </ul>
     <div>iphone 14</div>
-<img width="85" src="https://s.mobile.ir/Static/cache/prd/39805_0_0.jpg">
-<script>
+    <img width="85" src="https://s.mobile.ir/Static/cache/prd/39805_0_0.jpg">
 
-alert("welcome");
+    <hr>
+    <h1>I'm Sajad Mehri</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
 
+    <p id="name"></p>
+    <p id="family"></p>
 
-</script>
+    <button id="btn">
+        کلیک کنید
+    </button>
+    <script>
+        function add() {
+
+            let state = confirm("Add User?");
+            let i = 0;
+            let obj = {};
+            let name = document.getElementById("name")
+            let family = document.getElementById("family")
+            let btn = document.getElementById("btn")
+            function addUser() {
+                while (state == true) {
+                    let name = prompt("name user: ");
+                    let family = prompt("family user: ");
+                    obj[i] = {
+                        fname: name,
+                        lfamly: family
+
+                    }
+                    state = confirm("continue:");
+                    i++;
+                }
+            }
+            addUser()
+            name.innerHTML = obj[0].fname
+            family.innerHTML = obj[0].lfamly
+        }
+
+        btn.addEventListener("click", add)
+    </script>
 </body>
+
 </html>
