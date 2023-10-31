@@ -21,6 +21,7 @@
     <article id="show"></article>
     <button id="confirm">ثبت</button>
     <script>
+        let obj;
         let i=0;
         document.getElementById("user").addEventListener('click', function () {
             let Temp = document.getElementById("show").innerHTML;
@@ -33,7 +34,13 @@
             console.log(document.getElementById("family").value)
 
         })
-        
+        function save(){
+            for(let j=0;j<i;j++)
+            obj[j]={
+            "name":(document.getElementById('name-'+j).value),
+            "family":document.getElementById('family'+j).value
+            }
+        }
     </script>
  
 </body>
