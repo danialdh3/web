@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <style>
+        #k {
+            background-color: aqua;
+            tab-size: 200px;
+        }
+
+        #name {
+
+        }
+    </style>
+</head>
+
+<body>
+    <article id="user">اییجاد کاربر
+        <br>
+        <button id="K">جدید</button>
+    </article>
+    <article id="show"></article>
+    <button id="confirm">ثبت</button>
+    <script>
+        let i=0;
+        document.getElementById("user").addEventListener('click', function () {
+            let Temp = document.getElementById("show").innerHTML;
+            document.getElementById("show").innerHTML += `<b>name</b> <input id="name${i}"> <b>family</b> <input id="family${i}"><br>`
+            i++;
+        })
+        
+        document.getElementById("confirm").addEventListener('click',function(){
+            console.log(document.getElementById("name").value);
+            console.log(document.getElementById("family").value)
+
+        })
+        
+    </script>
+ 
+</body>
+
+</html>
