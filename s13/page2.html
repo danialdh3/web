@@ -1,0 +1,51 @@
+<head>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: lightgreen;
+            padding: 30px;
+        }
+    </style>
+    <div>
+
+        <b>نام کاربری</b>
+       user: <input id="user" type="text">
+        <b>پسوورد</b>
+       pass: <input id="pass" type="text"><br>
+        <b>ایمیل</b>
+       email: <input id="mail" type="text">
+<button>login or singup</button>
+    </div>
+</head>
+<script>
+    let data ={
+        user :document.getElementById("user").value,
+        pass :document.getElementById("pass").value,
+        email :document.getElementById("mail").value,
+    }
+    let request = new XMLHttpRequest();
+    request.open ('POST',"http://127.0.0.1:8037/singup");
+    request.send(JSON.tringfy(data));
+    request.onreadystatechange = function(){
+        if(request.readyState== XMLHttpRequest.DONE){
+            console.log(request.responseText);
+        if(request.status ===200){
+            //alert(request.responseText);
+            let elem= document.createElement('div');
+            elem.className = 'result';
+            elem.innerHTML = request.responseText;
+            document.getElementById("from").appendChild(elem);
+        
+        }
+        else{
+            //alert(request.responseText);
+            let elem = document.createElement('div');
+            elem.className = 'resultErr';
+            elem.innerHTML = request.responseText;
+            document.getElementById("from").appendChild(elem);
+        }
+        }
+    }
+</script>
+</html>
